@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <title>Prywatne lekcje gry na gitarze Kraków Bieńczyce – Gitara z Werą</title>
+  <meta name="description" content="Prywatne lekcje gry na gitarze w Krakowie i Bieńczycach. Gitara z Werą: instruktor gitary, nauka od podstaw, stacjonarnie lub z dojazdem po całym Krakowie.">
+  <meta name="theme-color" content="#3B2414">
+  <link rel="canonical" href="https://gitarazwera.pl/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233B2414' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cstyle%3Epath,circle%7Bstroke:%233B2414%7D@media(prefers-color-scheme:dark)%7Bpath,circle%7Bstroke:%23F4E1A7%7D%7D%3C/style%3E%3Cpath d='M9 18V5l12-2v13'/%3E%3Ccircle cx='6' cy='18' r='3'/%3E%3Ccircle cx='18' cy='16' r='3'/%3E%3C/svg%3E">
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Gitara z Werą">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:title" content="Prywatne lekcje gry na gitarze – Kraków, Bieńczyce | Gitara z Werą">
+  <meta property="og:description" content="Instruktor gitary w Krakowie: stacjonarnie w Bieńczycach lub z dojazdem do ucznia w całym mieście. Lekcje jeden na jeden. Zadzwoń lub zostaw numer.">
+  <meta property="og:url" content="https://gitarazwera.pl/">
+  <meta property="og:image" content="https://gitarazwera.pl/img/hero.jpg">
+  <meta property="og:image:alt" content="Gitara akustyczna – prywatne lekcje gry na gitarze w Krakowie, Bieńczyce">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prywatne lekcje gry na gitarze – Kraków, Bieńczyce">
+  <meta name="twitter:description" content="Gitara z Werą: instruktor gitary, lekcje w Krakowie, Bieńczyce i z dojazdem do ucznia.">
+
+  <!-- Dane strukturalne -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Gitara z Werą – prywatne lekcje gry na gitarze",
+    "description": "Indywidualne lekcje gry na gitarze w Krakowie: stacjonarnie w dzielnicy Bieńczyce oraz z dojazdem do ucznia na terenie całego Krakowa.",
+    "telephone": "+48500123456",
+    "email": "gitarazwera@gmail.com",
+    "url": "https://gitarazwera.pl/",
+    "areaServed": ["Kraków", "Bieńczyce"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kraków",
+      "addressRegion": "małopolskie",
+      "addressCountry": "PL"
+    }
+  }
+  </script>
+
+  <!-- Fonty: Young Serif (nagłówki) + Figtree (tekst) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coconut: '#3B2414', // Coconut Shell
+            daisy:   '#F4E1A7', // Soft Daisy
+            coral:   '#DAA095', // Dusty Coral
+            sand:    '#E7CCC5'  // Pink Sand
+          },
+          fontFamily: {
+            display: ['"Young Serif"', 'Georgia', 'serif'],
+            sans: ['Figtree', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    [id] { scroll-margin-top: 6.5rem; }
+    :focus-visible { outline: 3px solid #3B2414; outline-offset: 3px; }
+    .on-dark :focus-visible { outline-color: #F4E1A7; }
+
+    .ic { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor;
+          stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* Pojawianie się elementów podczas scrollowania */
+    .js [data-reveal] {
+      opacity: 0; transform: translateY(18px);
+      transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+      transition-delay: var(--d, 0ms);
+    }
+    .js [data-reveal].is-in { opacity: 1; transform: none; }
+
+    /* Rozeta w hero – jedna "główna" animacja strony */
+    @keyframes ringIn { from { opacity: 0; transform: scale(.86); } to { opacity: 1; transform: none; } }
+    .ring-anim { animation: ringIn 1.1s cubic-bezier(.2,.7,.2,1) both; }
+
+    /* Komunikat sukcesu */
+    @keyframes pop { 0% { transform: scale(.6); opacity: 0; } 70% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+    .pop { animation: pop .55s cubic-bezier(.2,.7,.2,1) both; }
+
+    /* Galeria: bardzo delikatne powiększenie zdjęcia po najechaniu */
+    .zoom-img {
+      transition: transform .7s cubic-bezier(.2,.7,.2,1);
+      will-change: transform;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    @media (hover: hover) { 
+      figure:hover .zoom-img { 
+        transform: scale(1.04) translateZ(0); 
+      } 
+    }
+
+    /* Opinie: nieskończone przesuwanie (marquee) */
+    .star { fill: #EBB33A; stroke: #EBB33A; stroke-width: 1; }
+
+    /* Wybór oceny w formularzu opinii */
+    .rate-star { fill: transparent; stroke: rgba(59,36,20,.4); stroke-width: 1.6; transition: fill .15s, stroke .15s, transform .15s; }
+    .rate-star.rate-on { fill: #EBB33A; stroke: #C48A0F; }
+    .star-label:focus-within { outline: 3px solid #3B2414; outline-offset: 2px; }
+    @media (hover: hover) { .star-label:hover .rate-star { transform: scale(1.08); } }
+    .marquee {
+      overflow: hidden; padding-block: .75rem;
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+              mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+    }
+    .marquee-track { display: flex; width: max-content; will-change: transform; }
+    .marquee-group { display: flex; flex: none; }
+    .review-card { flex: none; width: 17.5rem; margin-right: 1.25rem; }
+    @media (min-width: 640px) { .review-card { width: 21rem; } }
+    /* Ruch paska i zwalnianie (hover / dotyk) realizuje JS: requestAnimationFrame + transform */
+
+    /* Modal polityki prywatności */
+    html.modal-open { overflow: hidden; }
+
+    /* Pole z błędem walidacji */
+    input[aria-invalid="true"] { border-color: #3B2414 !important; box-shadow: 0 0 0 3px rgba(59, 36, 20, .22); }
+    /* Justowanie tylko na telefonach (od 640 px tekst wyrównany naturalnie do lewej) */
+    .justify-mobile { text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto; overflow-wrap: break-word; }
+    @media (min-width: 640px) { .justify-mobile { text-align: left; hyphens: manual; -webkit-hyphens: manual; } }
+    .legal-text, .justified { text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto; overflow-wrap: break-word; }
+    @keyframes dlgIn { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: none; } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .app-dialog[open] { animation: dlgIn .35s cubic-bezier(.2,.7,.2,1) both; }
+    .app-dialog::backdrop { animation: fadeIn .3s ease-out both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto !important; }
+      .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+      .ring-anim, .pop, .app-dialog[open], .app-dialog::backdrop { animation: none; }
+      .zoom-img { transition: none; }
+      figure:hover .zoom-img { transform: none !important; }
+      .marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+      .marquee-track { transform: none !important; }
+      .marquee-group[aria-hidden="true"] { display: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-coconut font-sans text-coconut antialiased">
+
+  <!-- Ikony (sprite SVG, bez zewnętrznych bibliotek) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.9L12 2.5z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+  </svg>
+
+  <!-- ===================== NAWIGACJA ===================== -->
+  <header class="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6">
+    <div class="mx-auto max-w-6xl">
+      <nav class="grid grid-cols-[1fr_auto_1fr] items-center rounded-full bg-sand/95 p-2.5 shadow-lg shadow-coconut/25 ring-1 ring-coconut/10 backdrop-blur lg:flex lg:justify-between lg:py-2.5 lg:pl-5 lg:pr-2.5" aria-label="Główna nawigacja">
+        <a href="#top" class="col-start-2 row-start-1 inline-flex items-center gap-2 justify-self-center font-display text-xl text-coconut transition-transform duration-300 hover:-rotate-2 hover:scale-105 motion-reduce:transition-none motion-reduce:hover:transform-none" aria-label="Gitara z Werą – strona główna">
+          <svg class="ic h-5 w-5 text-coconut" aria-hidden="true"><use href="#i-note"/></svg>
+          Gitara z Werą
+        </a>
+
+        <ul class="hidden items-center gap-4 text-[15px] font-semibold lg:flex">
+          <li><a class="transition-colors hover:text-coconut/60" href="#lekcje">O lekcjach</a></li>
+          <li aria-hidden="true" class="flex"><svg class="ic text-coconut/40" style="width:.8rem;height:.8rem"><use href="#i-note"/></svg></li>
+          <li><a class="transition-colors hover:text-coconut/60" href="#o-mnie">O mnie</a></li>
+          <li aria-hidden="true" class="flex"><svg class="ic text-coconut/40" style="width:.8rem;height:.8rem"><use href="#i-note"/></svg></li>
+          <li><a class="transition-colors hover:text-coconut/60" href="#galeria">Galeria</a></li>
+          <li aria-hidden="true" class="flex"><svg class="ic text-coconut/40" style="width:.8rem;height:.8rem"><use href="#i-note"/></svg></li>
+          <li><a class="transition-colors hover:text-coconut/60" href="#opinie">Opinie</a></li>
+          <li aria-hidden="true" class="flex"><svg class="ic text-coconut/40" style="width:.8rem;height:.8rem"><use href="#i-note"/></svg></li>
+          <li><a class="transition-colors hover:text-coconut/60" href="#kontakt">Kontakt</a></li>
+        </ul>
+
+        <div class="col-start-3 row-start-1 flex items-center justify-self-end gap-2">
+          <a href="#kontakt" class="hidden rounded-full bg-coconut px-5 py-2.5 text-[15px] font-semibold text-daisy transition hover:bg-coconut/85 lg:inline-flex">Zostaw numer</a>
+          <button id="menu-btn" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-coconut text-daisy lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Otwórz menu">
+            <svg id="icon-open" class="ic h-5 w-5" aria-hidden="true"><use href="#i-menu"/></svg>
+            <svg id="icon-close" class="ic hidden h-5 w-5" aria-hidden="true"><use href="#i-x"/></svg>
+          </button>
+        </div>
+      </nav>
+
+      <div id="mobile-menu" class="mt-2 hidden rounded-3xl bg-sand p-3 shadow-xl shadow-coconut/30 ring-1 ring-coconut/10 lg:hidden">
+        <ul class="text-lg font-semibold">
+          <li><a class="block rounded-2xl px-4 py-3.5 hover:bg-coconut/5" href="#lekcje">O lekcjach</a></li>
+          <li><a class="block rounded-2xl px-4 py-3.5 hover:bg-coconut/5" href="#o-mnie">O mnie</a></li>
+          <li><a class="block rounded-2xl px-4 py-3.5 hover:bg-coconut/5" href="#galeria">Galeria</a></li>
+          <li><a class="block rounded-2xl px-4 py-3.5 hover:bg-coconut/5" href="#opinie">Opinie</a></li>
+          <li><a class="block rounded-2xl px-4 py-3.5 hover:bg-coconut/5" href="#kontakt">Kontakt</a></li>
+        </ul>
+        <a href="#kontakt" class="mt-2 flex items-center justify-center rounded-2xl bg-coconut px-5 py-3.5 text-lg font-semibold text-daisy">Zostaw numer</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="on-dark relative overflow-hidden bg-coconut text-sand" aria-labelledby="hero-title">
+      <div class="pointer-events-none absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-coral/10 blur-3xl" aria-hidden="true"></div>
+
+      <div class="mx-auto grid max-w-6xl items-center gap-14 px-5 pb-20 pt-32 sm:px-8 sm:pt-40 lg:grid-cols-2 lg:gap-12 lg:pb-28">
+        <div>
+          <h1 id="hero-title" data-reveal class="text-center font-display text-[2.5rem] leading-[1.06] text-daisy sm:text-6xl lg:text-left lg:text-5xl">
+            Indywidualne lekcje gitary w Krakowie:<br>od pierwszego dźwięku do swobodnej gry
+          </h1>
+          <p data-reveal style="--d:120ms" class="justified mt-6 text-lg leading-relaxed text-sand sm:text-xl">
+            Mam na imię Weronika i uczę gry na gitarze krok po kroku - budując pewną technikę bez pośpiechu, w Twoim własnym tempie. Osobom grającym pomagam dopracować warsztat i rozwinąć skrzydła. Lekcje odbywają się stacjonarnie w Bieńczycach lub z dojazdem na terenie Krakowa.
+          </p>
+
+          <div data-reveal style="--d:240ms" class="mt-9 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+            <a href="tel:+48500123456" class="inline-flex items-center justify-center gap-2.5 rounded-full bg-daisy px-7 py-4 text-lg font-bold text-coconut transition hover:bg-white">
+              <svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>
+              Zadzwoń bezpośrednio
+            </a>
+            <a href="#kontakt" class="inline-flex items-center justify-center rounded-full border-2 border-sand/60 px-7 py-4 text-lg font-bold text-sand transition hover:border-daisy hover:text-daisy">
+              Zostaw numer
+            </a>
+          </div>
+        </div>
+
+        <!-- Rozeta: zdjęcie w kręgach jak otwór rezonansowy gitary -->
+        <div class="relative mx-auto aspect-square w-full max-w-[22rem] sm:max-w-md lg:max-w-[28rem]">
+          <div class="ring-anim absolute inset-0 rounded-full border-2 border-coral/70" style="animation-delay:.1s"></div>
+          <div class="ring-anim absolute inset-[5%] rounded-full border border-dashed border-daisy/60" style="animation-delay:.25s"></div>
+          <div class="ring-anim absolute inset-[10%] overflow-hidden rounded-full bg-coral/30 ring-8 ring-daisy" style="animation-delay:.4s">
+            <img data-fallback
+                 src="img/hero.jpg"
+                 alt="Gitara akustyczna w ciepłym świetle"
+                 width="900" height="900" fetchpriority="high"
+                 class="h-full w-full object-cover">
+          </div>
+          <div class="absolute -bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-coral px-5 py-2.5 text-[15px] font-bold text-coconut shadow-lg shadow-black/30 sm:left-auto sm:right-2 sm:translate-x-0">
+            <svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>
+            Bieńczyce, Kraków
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== O LEKCJACH ===================== -->
+    <section id="lekcje" class="bg-sand py-20 sm:py-28" aria-labelledby="lekcje-title">
+      <div class="mx-auto max-w-6xl px-5 sm:px-8">
+        <div data-reveal class="mx-auto text-center">
+          <h2 id="lekcje-title" class="mx-auto max-w-3xl font-display text-3xl leading-tight sm:text-5xl">Repertuar i program dopasowane do Ciebie</h2>
+          <p class="mx-auto mt-5 max-w-[68rem] text-balance text-lg leading-relaxed sm:text-xl">
+            Nie ma jednego uniwersalnego planu dla każdego. Zestaw ćwiczeń oraz utwory wybieramy wspólnie – biorąc pod uwagę Twoje aktualne umiejętności i muzykę, którą naprawdę chcesz grać.
+          </p>
+        </div>
+
+        <div class="mt-14 divide-y divide-coconut/20 border-y border-coconut/20">
+
+          <!-- Dla kogo -->
+          <div data-reveal class="grid gap-4 py-9 md:grid-cols-12 md:gap-10">
+            <h3 class="font-display text-2xl md:col-span-4">Dla kogo są lekcje</h3>
+            <div class="justified space-y-4 text-lg leading-relaxed md:col-span-8">
+              <p>Uczę dzieci od 6. roku życia, młodzież oraz dorosłych w każdym wieku. Lekcje są dla każdego, kto chce zacząć zupełnie od podstaw, wrócić do gitary po latach przerwy lub dopracować swój warsztat.</p>
+              <p>Nie masz jeszcze gitary? Żaden problem – na start udostępniam instrument. Gdy poczujesz, że chcesz grać dalej, wspólnie wybierzemy coś odpowiedniego dla Ciebie.</p>
+            </div>
+          </div>
+
+          <!-- Jak wyglądają -->
+          <div data-reveal class="grid gap-4 py-9 md:grid-cols-12 md:gap-10">
+            <h3 class="font-display text-2xl md:col-span-4">Jak wyglądają zajęcia</h3>
+            <div class="justified md:col-span-8">
+              <p class="text-lg leading-relaxed">Lekcje odbywają się w trybie 1 na 1. Zaczynamy od krótkiej rozmowy o tym, co chcesz zagrać i nad czym pracujemy, a podczas wspólnej pracy dbamy o:</p>
+              <ul class="mt-5 space-y-3 text-lg">
+                <li class="flex items-start gap-3"><svg class="ic mt-1.5 h-5 w-5" aria-hidden="true"><use href="#i-check"/></svg><span>rozgrzewkę i ćwiczenia techniczne – przygotowanie dłoni i aparatu gry,</span></li>
+                <li class="flex items-start gap-3"><svg class="ic mt-1.5 h-5 w-5" aria-hidden="true"><use href="#i-check"/></svg><span>teorię w praktyce – pojęcia i zasady wplatam podczas grania utworów,</span></li>
+                <li class="flex items-start gap-3"><svg class="ic mt-1.5 h-5 w-5" aria-hidden="true"><use href="#i-check"/></svg><span>potrzebne materiały do gry – zapewniam wszystkie nuty, tabulatury i opracowania do ćwiczeń,</span></li>
+                <li class="flex items-start gap-3"><svg class="ic mt-1.5 h-5 w-5" aria-hidden="true"><use href="#i-check"/></svg><span>prosty plan ćwiczeń na kolejny tydzień – wiesz dokładnie, co i jak ćwiczyć w domu.</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Gdzie -->
+          <div data-reveal class="grid gap-4 py-9 md:grid-cols-12 md:gap-10">
+            <h3 class="font-display text-2xl md:col-span-4">Gdzie się spotykamy</h3>
+            <div class="grid gap-4 sm:grid-cols-2 md:col-span-8">
+              <div class="rounded-3xl bg-daisy p-6">
+                <svg class="ic h-7 w-7" aria-hidden="true"><use href="#i-home"/></svg>
+                <p class="mt-4 font-display text-xl">Stacjonarnie w Bieńczycach</p>
+                <p class="justified mt-2 leading-relaxed">Spokojne, ciepłe miejsce do nauki w krakowskich Bieńczycach, z dobrym dojazdem komunikacją miejską.</p>
+              </div>
+              <div class="rounded-3xl bg-coral p-6">
+                <svg class="ic h-7 w-7" aria-hidden="true"><use href="#i-pin"/></svg>
+                <p class="mt-4 font-display text-xl">Z dojazdem do Ciebie</p>
+                <p class="justified mt-2 leading-relaxed">Wolisz ćwiczyć we własnej przestrzeni? Lekcje mogą odbywać się w Twoim domu. Dojeżdżam na terenie Krakowa po wcześniejszym ustaleniu lokalizacji.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Telefon -->
+        <div data-reveal class="mt-14 flex flex-col items-stretch gap-8 rounded-[2rem] bg-coconut p-8 text-sand sm:p-12 lg:flex-row lg:items-center lg:justify-between">
+          <div class="on-dark w-full lg:min-w-0 lg:max-w-xl lg:flex-1">
+            <h3 class="text-center font-display text-2xl text-daisy sm:text-3xl md:text-left">Szczegóły ustalamy telefonicznie</h3>
+            <p class="justified mt-3 text-lg leading-relaxed">Miejsce, dzień, godzinę i długość zajęć omawiamy podczas rozmowy. Odpowiem na Twoje pytania i zaplanujemy pierwsze spotkanie.</p>
+          </div>
+          <div class="on-dark flex w-full flex-col gap-3 sm:flex-row lg:w-auto lg:flex-none">
+            <a href="tel:+48500123456" class="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-daisy px-7 py-4 text-lg font-bold text-coconut transition hover:bg-white sm:flex-1 lg:flex-none">
+              <svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>
+              500 123 456
+            </a>
+            <a href="#kontakt" class="inline-flex items-center justify-center whitespace-nowrap rounded-full border-2 border-sand/60 px-7 py-4 text-lg font-bold text-sand transition hover:border-daisy hover:text-daisy sm:flex-1 lg:flex-none">Zostaw numer</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== O MNIE ===================== -->
+    <section id="o-mnie" class="bg-daisy py-20 sm:py-28" aria-labelledby="omnie-title">
+      <div class="mx-auto grid max-w-6xl gap-14 px-5 sm:px-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
+
+        <div data-reveal class="relative mx-auto w-full max-w-sm lg:mx-0 lg:max-w-none">
+          <div class="absolute -bottom-4 -right-4 h-full w-full rounded-t-[999px] rounded-b-3xl bg-coral" aria-hidden="true"></div>
+          <div class="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-3xl bg-sand">
+            <img data-fallback loading="lazy"
+                 src="img/o-mnie.jpg"
+                 alt="Wera, instruktorka gitary, z gitarą w dłoniach"
+                 width="800" height="1000"
+                 class="h-full w-full object-cover">
+          </div>
+        </div>
+
+        <div>
+          <div data-reveal>
+            <h2 id="omnie-title" class="font-display text-3xl leading-tight sm:text-5xl">Kilka słów o mnie</h2>
+            <div class="mt-6 space-y-5 text-lg leading-relaxed sm:text-xl">
+              <p class="justified">Cześć, jestem Weronika. Na gitarze gram od 10. roku życia. Mam wykształcenie wyższe muzyczne – ukończyłam studia na Akademii Muzycznej im. Krzysztofa Pendereckiego w Krakowie, a obecnie kontynuuję tam studia magisterskie.</p>
+              <p class="justified">Oprócz nauczania regularnie koncertuję – można mnie usłyszeć m.in. w oddziałach Muzeum Narodowego w Krakowie czy podczas wydarzeń tematycznych. Brałam udział w koncertach międzyuczelnianych w Polsce i za granicą, występując m.in. na Uniwersytecie Muzycznym Fryderyka Chopina w Warszawie oraz w Wyższej Szkole Sztuk Scenicznych w Bratysławie.</p>
+              <p class="justified">Angażuję się też w inicjatywy edukacyjne: organizuję koncerty w szkołach muzycznych I stopnia, prowadzę autorskie warsztaty gitarowe, a także tworzę bardziej kameralne wydarzenia muzyczne w kawiarniach. W uczeniu najbardziej zależy mi na swobodnej atmosferze i radości z grania. Chcę po prostu zarażać pasją do gitary i sprawić, by każda lekcja była dobrą odskocznią od codzienności.</p>
+            </div>
+          </div>
+
+          <dl data-reveal class="mt-12 text-left divide-y divide-coconut/20 border-y border-coconut/20 text-lg">
+            <div class="grid grid-cols-1 gap-2.5 py-5 sm:grid-cols-[9.5rem_1fr] sm:gap-4 sm:py-4">
+              <dt class="whitespace-nowrap text-center font-sans font-semibold tabular-nums sm:text-left">2022 – obecnie</dt>
+              <dd class="justify-mobile">Akademia Muzyczna im. Krzysztofa Pendereckiego w Krakowie (licencjat, w trakcie studiów  magisterskich)</dd>
+            </div>
+            <div class="grid grid-cols-1 gap-2.5 py-5 sm:grid-cols-[9.5rem_1fr] sm:gap-4 sm:py-4">
+              <dt class="whitespace-nowrap text-center font-sans font-semibold tabular-nums sm:text-left">od 2023</dt>
+              <dd class="text-center sm:text-left">Prowadzenie lekcji gitary</dd>
+            </div>
+            <div class="grid grid-cols-1 gap-2.5 py-5 sm:grid-cols-[9.5rem_1fr] sm:gap-4 sm:py-4">
+              <dt class="whitespace-nowrap text-center font-sans font-semibold tabular-nums sm:text-left">2019–2021</dt>
+              <dd class="text-center sm:text-left">POSM II stopnia im. F. Chopina w Krakowie</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Galeria -->
+      <div id="galeria" class="mx-auto mt-20 max-w-6xl px-5 sm:mt-28 sm:px-8">
+        <h3 data-reveal class="font-display text-2xl sm:text-3xl">Muzyczne kadry</h3>
+        <div class="mt-8 grid grid-cols-2 gap-3 sm:gap-4 md:h-[34rem] md:grid-cols-4 md:grid-rows-2">
+          <figure data-reveal class="relative col-span-2 aspect-[4/3] overflow-hidden rounded-3xl bg-coral/50 md:aspect-auto md:row-span-2">
+            <img data-fallback loading="lazy"
+                 src="img/galeria-1.jpg"
+                 alt="Gitarzystka podczas koncertu na scenie" width="1000" height="1000"
+                 class="zoom-img h-full w-full object-cover">
+            <figcaption class="absolute bottom-3 left-3 rounded-full bg-coconut/85 px-4 py-1.5 text-sm font-semibold text-daisy">Koncert w Muzeum Narowodym w Krakowie</figcaption>
+          </figure>
+          <figure data-reveal style="--d:80ms" class="relative aspect-square overflow-hidden rounded-3xl bg-coral/50 md:aspect-auto">
+            <img data-fallback loading="lazy"
+                 src="img/galeria-2.jpg"
+                 alt="Muzyk grający na scenie przy mikrofonie" width="700" height="700"
+                 class="zoom-img h-full w-full object-cover">
+            <figcaption class="absolute bottom-3 left-3 rounded-full bg-coconut/85 px-4 py-1.5 text-sm font-semibold text-daisy">Koncert „Sztuka Dawania”</figcaption>
+          </figure>
+          <figure data-reveal style="--d:140ms" class="relative aspect-square overflow-hidden rounded-3xl bg-coral/50 md:aspect-auto">
+            <img data-fallback loading="lazy"
+                 src="img/galeria-3.jpg"
+                 alt="Sprzęt muzyczny w trakcie próby" width="700" height="700"
+                 class="zoom-img h-full w-full object-cover">
+            <figcaption class="absolute bottom-3 left-3 rounded-full bg-coconut/85 px-4 py-1.5 text-sm font-semibold text-daisy">Koncert „Homenaje a J. Rodrigo”</figcaption>
+          </figure>
+          <figure data-reveal style="--d:200ms" class="relative col-span-2 aspect-video overflow-hidden rounded-3xl bg-coral/50 md:aspect-auto">
+            <video id="gallery-video" class="h-full w-full rounded-3xl object-cover"
+                   controls playsinline preload="metadata" poster="img/video-poster.jpg"
+                   aria-label="Nagranie: Wera gra na gitarze">
+              <source src="img/wera-gra.mp4" type="video/mp4">
+              Twoja przeglądarka nie obsługuje odtwarzania wideo.
+            </video>
+            <figcaption id="video-badge" class="pointer-events-none absolute left-3 top-3 rounded-full bg-coconut/85 px-4 py-1.5 text-sm font-semibold text-daisy transition-opacity duration-300">Posłuchaj ze sceny – G. Regondi Etiuda nr. 1</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== OPINIE UCZNIÓW ===================== -->
+    <section id="opinie" class="on-dark bg-coconut py-20 text-sand sm:py-28" aria-labelledby="opinie-title">
+      <div class="mx-auto max-w-6xl px-5 sm:px-8">
+        <div data-reveal class="mx-auto max-w-3xl text-center">
+          <h2 id="opinie-title" class="font-display text-3xl leading-tight text-daisy sm:text-5xl">Opinie uczniów</h2>
+          <p class="mt-5 text-lg leading-relaxed sm:text-xl">Kilka słów o wspólnej nauce i atmosferze na zajęciach.</p>
+        </div>
+
+        <div data-reveal style="--d:100ms" class="mt-10 flex justify-center">
+          <div class="inline-flex flex-col items-center rounded-[2rem] border border-sand/20 bg-sand/[0.06] px-10 py-7 text-center">
+            <p class="font-display leading-none text-daisy">
+              <span id="rating-avg" class="text-6xl sm:text-7xl">5.0</span>
+              <span class="text-3xl text-sand/70 sm:text-4xl">/ 5.0</span>
+            </p>
+            <div class="mt-4 flex gap-1" role="img" aria-label="Średnia ocena: 5 na 5 gwiazdek">
+              <svg class="ic star" style="width:1.75rem;height:1.75rem" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg class="ic star" style="width:1.75rem;height:1.75rem" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg class="ic star" style="width:1.75rem;height:1.75rem" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg class="ic star" style="width:1.75rem;height:1.75rem" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg class="ic star" style="width:1.75rem;height:1.75rem" aria-hidden="true"><use href="#i-star"/></svg>
+            </div>
+            <p id="rating-caption" class="mt-3 text-base text-sand/80">Średnia z 10 nadesłanych opinii uczniów</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pasek z opiniami: karty są generowane i losowane w JS (patrz skrypt) -->
+      <div data-reveal style="--d:200ms" class="mt-12">
+        <div id="reviews-marquee" class="marquee" role="region" aria-label="Opinie uczniów">
+          <div id="reviews-track" class="marquee-track">
+            <div id="reviews-group-a" class="marquee-group"></div>
+            <div id="reviews-group-b" class="marquee-group" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KONTAKT ===================== -->
+    <section id="kontakt" class="bg-coral py-20 sm:py-28" aria-labelledby="kontakt-title">
+      <div class="mx-auto grid max-w-6xl items-start gap-12 px-5 sm:px-8 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
+
+        <div data-reveal class="flex flex-col items-center text-center lg:self-center">
+          <h2 id="kontakt-title" class="font-display text-3xl leading-tight sm:text-5xl">Zostaw numer, oddzwonię</h2>
+          <p class="mx-auto mt-6 max-w-lg text-lg leading-relaxed sm:text-xl">
+            Wskaż dogodny termin rozmowy. Skontaktuję się z Tobą, odpowiem na pytania i ustalimy szczegóły pierwszego spotkania.
+          </p>
+          <p class="mt-8 text-lg">Wolisz odezwać się samemu?</p>
+          <a href="tel:+48500123456" class="mt-3 inline-flex items-center gap-3 font-display text-3xl transition-opacity hover:opacity-70 sm:text-4xl">
+            <svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>
+            500 123 456
+          </a>
+          <p class="mt-4 whitespace-nowrap font-medium leading-snug [font-size:clamp(.78rem,3.7vw,1.125rem)]">Jestem pod telefonem od poniedziałku do piątku</p>
+        </div>
+
+        <div data-reveal style="--d:120ms" class="rounded-[2rem] bg-sand p-6 shadow-xl shadow-coconut/15 sm:p-10">
+
+          <form id="callback-form" novalidate class="space-y-5" aria-describedby="form-note">
+            <div>
+              <label for="imie" class="mb-2 block text-base font-bold">Imię</label>
+              <input id="imie" name="imie" type="text" required autocomplete="given-name" maxlength="60"
+                     class="w-full rounded-xl border border-coconut/25 bg-white/70 px-4 py-3.5 text-base placeholder:text-coconut/40 focus:border-coconut focus:bg-white"
+                     placeholder="Jak się do Ciebie zwracać?">
+            </div>
+
+            <div>
+              <label for="telefon" class="mb-2 block text-base font-bold">Numer telefonu</label>
+              <input id="telefon" name="telefon" type="tel" inputmode="tel" required autocomplete="tel" maxlength="20" aria-describedby="telefon-error"
+                     class="w-full rounded-xl border border-coconut/25 bg-white/70 px-4 py-3.5 text-base placeholder:text-coconut/40 focus:border-coconut focus:bg-white"
+                     placeholder="np. 500 123 456">
+              <p id="telefon-error" role="alert" class="mt-2 hidden rounded-lg bg-coconut px-3 py-2 text-sm font-semibold text-daisy"></p>
+            </div>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="dzien" class="mb-2 block text-base font-bold">Dzień</label>
+                <div class="relative">
+                  <select id="dzien" name="dzien" required
+                          class="w-full appearance-none rounded-xl border border-coconut/25 bg-white/70 px-4 py-3.5 pr-11 text-base focus:border-coconut focus:bg-white">
+                    <option value="" disabled selected>Wybierz dzień</option>
+                  </select>
+                  <svg class="ic pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2" aria-hidden="true"><use href="#i-chevron"/></svg>
+                </div>
+              </div>
+              <div>
+                <label for="godzina" class="mb-2 block text-base font-bold">Godzina</label>
+                <div class="relative">
+                  <select id="godzina" name="godzina" required
+                          class="w-full appearance-none rounded-xl border border-coconut/25 bg-white/70 px-4 py-3.5 pr-11 text-base focus:border-coconut focus:bg-white">
+                    <option value="" disabled selected>Wybierz godziny</option>
+                    <option value="10:00-13:00">10:00–13:00</option>
+                    <option value="13:00-16:00">13:00–16:00</option>
+                    <option value="16:00-19:00">16:00–19:00</option>
+                  </select>
+                  <svg class="ic pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2" aria-hidden="true"><use href="#i-chevron"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pole-pułapka na boty (ukryte) -->
+            <div style="position:absolute;left:-9999px" aria-hidden="true">
+              <label>Nie wypełniaj tego pola<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <p id="form-error" role="alert" class="hidden rounded-xl bg-coconut px-4 py-3 text-base font-semibold text-daisy"></p>
+
+            <button id="submit-btn" type="submit"
+                    class="flex w-full items-center justify-center gap-2.5 rounded-full bg-coconut px-7 py-4 text-lg font-bold text-daisy transition hover:bg-coconut/85 disabled:cursor-wait disabled:opacity-70">
+              <svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>
+              <span id="submit-label">Oddzwoń do mnie</span>
+            </button>
+
+            <p id="form-note" class="text-center text-sm leading-relaxed text-coconut/80">
+              <svg class="ic mr-1.5 inline-block" style="width:1rem;height:1rem;vertical-align:-.2em" aria-hidden="true"><use href="#i-shield"/></svg>Szczegóły przetwarzania danych znajdziesz w <button type="button" data-privacy-open class="font-semibold underline underline-offset-2 hover:text-coconut">Polityce prywatności</button>.
+            </p>
+          </form>
+
+          <!-- Komunikat sukcesu -->
+          <div id="form-success" class="hidden py-6 text-center" role="status" tabindex="-1">
+            <div class="pop mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-daisy ring-8 ring-coral/40">
+              <svg class="ic h-9 w-9" style="stroke-width:2.5" aria-hidden="true"><use href="#i-check"/></svg>
+            </div>
+            <h3 class="mt-6 font-display text-3xl">Dziękuję, <span id="success-name"></span>!</h3>
+            <p class="mx-auto mt-3 max-w-sm text-lg leading-relaxed">
+              Oddzwonię w dniu: <strong id="success-day"></strong>, w godzinach <strong id="success-time"></strong>.
+            </p>
+            <p class="mx-auto mt-3 max-w-sm text-base text-coconut/80">Jeśli coś się zmieni, zadzwoń śmiało: 500 123 456.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== STOPKA ===================== -->
+  <footer class="on-dark bg-coconut text-sand">
+    <div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 text-center sm:px-8 md:grid-cols-3">
+      <div class="flex flex-col items-center">
+        <p class="flex items-center justify-center gap-2 font-display text-2xl text-daisy">
+          <svg class="ic h-5 w-5" aria-hidden="true"><use href="#i-note"/></svg>
+          Gitara z Werą
+        </p>
+        <p class="mx-auto mt-4 max-w-sm leading-relaxed">Prywatne lekcje gry na gitarze w Krakowie: stacjonarnie w Bieńczycach lub z dojazdem do Ciebie (po ustaleniu lokalizacji).</p>
+        <button type="button" data-review-open
+                class="mt-6 inline-flex items-center justify-center gap-2.5 rounded-full bg-coral px-6 py-3.5 text-base font-bold text-coconut transition hover:bg-daisy">
+          <svg class="ic" style="width:1.1rem;height:1.1rem;fill:currentColor" aria-hidden="true"><use href="#i-star"/></svg>
+          Wystaw opinię
+        </button>
+      </div>
+      <nav aria-label="Nawigacja w stopce" class="flex flex-col items-center">
+        <p class="font-display text-lg text-daisy">Na stronie</p>
+        <ul class="mt-4 space-y-2.5">
+          <li><a class="hover:text-daisy" href="#lekcje">O lekcjach</a></li>
+          <li><a class="hover:text-daisy" href="#o-mnie">O mnie</a></li>
+          <li><a class="hover:text-daisy" href="#galeria">Galeria</a></li>
+          <li><a class="hover:text-daisy" href="#opinie">Opinie</a></li>
+          <li><a class="hover:text-daisy" href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="flex flex-col items-center">
+        <p class="font-display text-lg text-daisy">Kontakt</p>
+        <ul class="mt-4 space-y-2.5">
+          <li class="flex justify-center"><a class="inline-flex items-center justify-center gap-2 hover:text-daisy" href="tel:+48500123456"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>500 123 456</a></li>
+          <li class="flex justify-center"><a class="inline-flex items-center justify-center gap-2 hover:text-daisy" href="https://www.google.com/maps/search/?api=1&amp;query=Bie%C5%84czyce%2C%20Krak%C3%B3w" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Kraków, Bieńczyce<span class="sr-only"> (otwiera Mapy Google w nowej karcie)</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-sand/15">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-center gap-2 px-5 py-6 text-center text-sm text-sand/70 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:px-8">
+        <p>&copy; <span id="year">2026</span> Gitara z Werą. Wszelkie prawa zastrzeżone.</p>
+        <button type="button" data-privacy-open class="w-fit underline underline-offset-4 transition hover:text-daisy">Polityka prywatności i RODO</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== MODAL: POLITYKA PRYWATNOŚCI I RODO ===================== -->
+  <dialog id="privacy-modal" aria-labelledby="privacy-title"
+          class="app-dialog m-auto w-[calc(100%-1.5rem)] max-w-xl overflow-hidden rounded-3xl bg-sand p-0 text-coconut shadow-2xl backdrop:bg-coconut/70 backdrop:backdrop-blur-sm">
+    <div class="flex max-h-[85vh] flex-col">
+      <div class="flex items-start justify-between gap-4 border-b border-coconut/15 px-6 py-5 sm:px-8">
+        <h2 id="privacy-title" class="font-display text-2xl leading-tight sm:text-3xl">Polityka prywatności i RODO</h2>
+        <button type="button" data-privacy-close aria-label="Zamknij okno"
+                class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-coconut text-daisy transition hover:bg-coconut/85">
+          <svg class="ic" style="width:1.1rem;height:1.1rem" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+
+      <div id="privacy-body" class="space-y-5 overflow-y-auto px-6 py-6 text-base leading-relaxed sm:px-8">
+        <section>
+          <h3 class="text-left font-display text-lg">Administrator danych</h3>
+          <p class="legal-text mt-1">Administratorem Twoich danych osobowych jest Weronika, prowadząca działalność nierejestrowaną pod nazwą Gitara z Werą. Kontakt: <a class="font-semibold underline" href="mailto:gitarazwera@gmail.com">gitarazwera@gmail.com</a>.</p>
+        </section>
+
+        <section>
+          <h3 class="text-left font-display text-lg">Cel przetwarzania</h3>
+          <p class="legal-text mt-1">Imię, numer telefonu oraz wybrany dzień i godziny z formularza oddzwonienia przetwarzam wyłącznie w celu jednorazowego kontaktu telefonicznego i omówienia szczegółów lekcji gry na gitarze. Podstawą prawną jest podjęcie działań na Twoje żądanie przed zawarciem umowy (<em>art. 6 ust. 1 lit. b RODO</em>). Dane przechowuję do czasu odbycia rozmowy, nie dłużej niż 30 dni.</p>
+        </section>
+
+        <section>
+          <h3 class="text-left font-display text-lg">Odbiorcy danych i profilowanie</h3>
+          <p class="legal-text mt-1">Nie profiluję Cię ani nie przekazuję Twoich danych podmiotom trzecim w celach marketingowych. Zgłoszenie trafia do mojego prywatnego arkusza, który służy wyłącznie do organizacji kontaktu. Dostęp do danych mogą mieć jedynie zaufani dostawcy usług technologicznych, z których korzystam do obsługi strony i poczty (np. hosting, poczta e-mail, arkusz kalkulacyjny).</p>
+        </section>
+
+        <section>
+          <h3 class="text-left font-display text-lg">Pliki cookies</h3>
+          <p class="legal-text mt-1">Strona ma charakter wyłącznie informacyjny. Nie wykorzystuje śledzących ani reklamowych plików cookies i nie korzysta z narzędzi analitycznych.</p>
+        </section>
+
+        <section>
+          <h3 class="text-left font-display text-lg">Opinie o lekcjach</h3>
+          <p class="legal-text mt-1">Jeśli prześlesz opinię, przetwarzam Twoje imię, ocenę i treść opinii w celu jej publikacji na stronie po wcześniejszym zatwierdzeniu. Podstawą prawną jest Twoja dobrowolna zgoda (<em>art. 6 ust. 1 lit. a RODO</em>), którą możesz wycofać w każdej chwili, prosząc o usunięcie wpisu. Na stronie publikowane są wyłącznie imię, ocena oraz treść opinii.</p>
+        </section>
+
+        <section>
+          <h3 class="text-left font-display text-lg">Twoje prawa</h3>
+          <p class="legal-text mt-1">W każdej chwili możesz poprosić o wgląd do swoich danych, ich poprawienie lub usunięcie. Przysługuje Ci również prawo do wniesienia skargi do organu nadzorczego (Prezesa UODO).</p>
+        </section>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ===================== MODAL: DODAJ OPINIĘ ===================== -->
+  <dialog id="review-modal" aria-labelledby="review-title"
+          class="app-dialog m-auto w-[calc(100%-1.5rem)] max-w-xl overflow-hidden rounded-3xl bg-sand p-0 text-coconut shadow-2xl backdrop:bg-coconut/70 backdrop:backdrop-blur-sm">
+    <div class="flex max-h-[90vh] flex-col">
+      <div class="flex items-start justify-between gap-4 border-b border-coconut/15 px-6 py-5 sm:px-8">
+        <h2 id="review-title" class="font-display text-2xl leading-tight sm:text-3xl">Podziel się opinią o lekcjach</h2>
+        <button type="button" data-review-close aria-label="Zamknij okno"
+                class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-coconut text-daisy transition hover:bg-coconut/85">
+          <svg class="ic" style="width:1.1rem;height:1.1rem" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+
+      <div class="overflow-y-auto px-6 py-6 sm:px-8">
+        <form id="review-form" novalidate class="space-y-5">
+          <div>
+            <label for="rv-name" class="mb-2 block text-base font-bold">Podaj swoje imię</label>
+            <input id="rv-name" type="text" required minlength="2" maxlength="40" autocomplete="given-name"
+                   class="w-full rounded-xl border border-coconut/25 bg-white/70 px-4 py-3.5 text-base placeholder:text-coconut/40 focus:border-coconut focus:bg-white"
+                   placeholder="Podaj swoje imię">
+          </div>
+
+          <fieldset>
+            <legend class="mb-2 block text-base font-bold">Ocena</legend>
+            <div class="flex flex-wrap items-center gap-x-1 gap-y-1">
+              <label class="star-label cursor-pointer rounded-lg p-1">
+                <input type="radio" name="ocena" value="1" class="sr-only" aria-label="1 na 5">
+                <svg class="ic rate-star" style="width:2.2rem;height:2.2rem" aria-hidden="true"><use href="#i-star"/></svg>
+              </label>
+              <label class="star-label cursor-pointer rounded-lg p-1">
+                <input type="radio" name="ocena" value="2" class="sr-only" aria-label="2 na 5">
+                <svg class="ic rate-star" style="width:2.2rem;height:2.2rem" aria-hidden="true"><use href="#i-star"/></svg>
+              </label>
+              <label class="star-label cursor-pointer rounded-lg p-1">
+                <input type="radio" name="ocena" value="3" class="sr-only" aria-label="3 na 5">
+                <svg class="ic rate-star" style="width:2.2rem;height:2.2rem" aria-hidden="true"><use href="#i-star"/></svg>
+              </label>
+              <label class="star-label cursor-pointer rounded-lg p-1">
+                <input type="radio" name="ocena" value="4" class="sr-only" aria-label="4 na 5">
+                <svg class="ic rate-star" style="width:2.2rem;height:2.2rem" aria-hidden="true"><use href="#i-star"/></svg>
+              </label>
+              <label class="star-label cursor-pointer rounded-lg p-1">
+                <input type="radio" name="ocena" value="5" class="sr-only" aria-label="5 na 5">
+                <svg class="ic rate-star" style="width:2.2rem;height:2.2rem" aria-hidden="true"><use href="#i-star"/></svg>
+              </label>
+            </div>
+          </fieldset>
+
+          <div>
+            <label for="rv-text" class="mb-2 block text-base font-bold">Twoja opinia</label>
+            <textarea id="rv-text" rows="5" maxlength="300" required aria-describedby="rv-count"
+                      class="w-full resize-y rounded-xl border border-coconut/25 bg-white/70 px-4 py-3.5 text-base placeholder:text-coconut/40 focus:border-coconut focus:bg-white"
+                      placeholder="Podziel się z innymi opinią o zajęciach."></textarea>
+            <p id="rv-count" class="mt-1.5 text-right text-sm text-coconut/70">pozostało 300/300</p>
+          </div>
+
+          <!-- Pole-pułapka na boty (ukryte) -->
+          <div style="position:absolute;left:-9999px" aria-hidden="true">
+            <label>Nie wypełniaj tego pola<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <p id="review-error" role="alert" class="hidden rounded-xl bg-coconut px-4 py-3 text-base font-semibold text-daisy"></p>
+
+          <button id="review-submit" type="submit"
+                  class="flex w-full items-center justify-center gap-2.5 rounded-full bg-coconut px-7 py-4 text-lg font-bold text-daisy transition hover:bg-coconut/85 disabled:cursor-wait disabled:opacity-70">
+            <svg class="ic" style="fill:currentColor" aria-hidden="true"><use href="#i-star"/></svg>
+            <span id="review-submit-label">Prześlij opinię</span>
+          </button>
+
+          <p class="text-center text-sm leading-relaxed text-coconut/80">
+            Opinia pojawi się na stronie po zatwierdzeniu, tylko z imieniem, oceną i treścią. Nie publikuję numeru telefonu ani innych danych. Szczegóły znajdziesz w <button type="button" data-privacy-open class="font-semibold underline underline-offset-2 hover:text-coconut">Polityce prywatności</button>.
+          </p>
+        </form>
+
+        <div id="review-success" class="hidden py-6 text-center" role="status" tabindex="-1">
+          <div class="pop mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-daisy ring-8 ring-coral/40">
+            <svg class="ic h-9 w-9" style="stroke-width:2.5" aria-hidden="true"><use href="#i-check"/></svg>
+          </div>
+          <h3 class="mt-6 font-display text-3xl">Dziękuję za opinię!</h3>
+          <p class="mx-auto mt-3 max-w-sm text-lg leading-relaxed">Zostanie opublikowana po zatwierdzeniu.</p>
+          <button type="button" data-review-close
+                  class="mt-7 inline-flex items-center justify-center rounded-full bg-coconut px-7 py-3.5 text-base font-bold text-daisy transition hover:bg-coconut/85">Zamknij</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---------- Konfiguracja ---------- */
+      const GOOGLE_SCRIPT_URL = 'URL_DO_PODMIANY';
+
+      /* ---------- Menu mobilne ---------- */
+      const menuBtn = document.getElementById('menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('icon-open');
+      const iconClose = document.getElementById('icon-close');
+
+      function setMenu(open) {
+        menu.classList.toggle('hidden', !open);
+        iconOpen.classList.toggle('hidden', open);
+        iconClose.classList.toggle('hidden', !open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+      }
+      menuBtn.addEventListener('click', () => setMenu(menu.classList.contains('hidden')));
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+      window.matchMedia('(min-width: 1024px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+
+      /* ---------- Animacje przy scrollowaniu ---------- */
+      const revealEls = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-in');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+        revealEls.forEach(el => io.observe(el));
+      } else {
+        revealEls.forEach(el => el.classList.add('is-in'));
+      }
+
+      /* ---------- Zdjęcia: elegancki fallback, gdy nie załadują się ---------- */
+      document.querySelectorAll('img[data-fallback]').forEach(img => {
+        img.addEventListener('error', () => { img.style.opacity = '0'; });
+      });
+
+      /* ---------- Galeria: plakietka znika na czas odtwarzania wideo ---------- */
+      const galleryVideo = document.getElementById('gallery-video');
+      const videoBadge = document.getElementById('video-badge');
+      if (galleryVideo && videoBadge) {
+        galleryVideo.addEventListener('play', () => videoBadge.classList.add('opacity-0'));
+        ['pause', 'ended'].forEach(ev => galleryVideo.addEventListener(ev, () => videoBadge.classList.remove('opacity-0')));
+      }
+
+      /* ---------- Rok w stopce ---------- */
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      /* ---------- Modale: polityka prywatności i dodawanie opinii ---------- */
+      function syncScrollLock() {
+        document.documentElement.classList.toggle('modal-open', !!document.querySelector('dialog[open]'));
+      }
+      function setupDialog(dialog, openAttr, closeAttr, onOpen) {
+        function open() {
+          if (typeof dialog.showModal === 'function') dialog.showModal();
+          else dialog.setAttribute('open', '');
+          syncScrollLock();
+          if (onOpen) onOpen();
+        }
+        function close() {
+          if (typeof dialog.close === 'function') dialog.close();
+          else dialog.removeAttribute('open');
+          syncScrollLock();
+        }
+        document.querySelectorAll('[' + openAttr + ']').forEach(b => b.addEventListener('click', open));
+        document.querySelectorAll('[' + closeAttr + ']').forEach(b => b.addEventListener('click', close));
+        // kliknięcie w tło poza oknem zamyka modal
+        dialog.addEventListener('click', e => { if (e.target === dialog) close(); });
+        // Esc zamyka natywnie – tu tylko aktualizujemy blokadę scrolla
+        dialog.addEventListener('close', syncScrollLock);
+        return { open, close };
+      }
+      // Starsze przeglądarki bez <dialog>.showModal(): obsługa Esc ręcznie
+      if (!window.HTMLDialogElement || !HTMLDialogElement.prototype.showModal) {
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape') {
+            document.querySelectorAll('dialog[open]').forEach(d => d.removeAttribute('open'));
+            syncScrollLock();
+          }
+        });
+      }
+
+      setupDialog(document.getElementById('privacy-modal'), 'data-privacy-open', 'data-privacy-close', () => {
+        // za każdym razem zaczynamy czytanie od góry
+        document.getElementById('privacy-body').scrollTop = 0;
+      });
+
+      /* ---------- Formularz dodawania opinii ---------- */
+      const reviewModal = document.getElementById('review-modal');
+      const reviewForm = document.getElementById('review-form');
+      const reviewSuccess = document.getElementById('review-success');
+      const rvName = document.getElementById('rv-name');
+      const rvText = document.getElementById('rv-text');
+      const rvCount = document.getElementById('rv-count');
+      const rvError = document.getElementById('review-error');
+      const rvSubmit = document.getElementById('review-submit');
+      const rvSubmitLabel = document.getElementById('review-submit-label');
+      const starLabels = Array.from(reviewForm.querySelectorAll('.star-label'));
+      const MAX_REVIEW = 300;
+      let rating = 0;
+
+      function paintStars(n) {
+        starLabels.forEach((label, i) => label.querySelector('svg').classList.toggle('rate-on', i < n));
+      }
+      starLabels.forEach((label, i) => {
+        label.addEventListener('mouseenter', () => paintStars(i + 1));
+        label.addEventListener('mouseleave', () => paintStars(rating));
+        label.querySelector('input').addEventListener('change', () => { rating = i + 1; paintStars(rating); });
+      });
+
+      function updateCounter() {
+        const left = MAX_REVIEW - rvText.value.length;
+        rvCount.textContent = 'pozostało ' + left + '/' + MAX_REVIEW;
+        rvCount.classList.toggle('font-bold', left <= 20);
+      }
+      rvText.addEventListener('input', updateCounter);
+
+      function showRvError(msg, field) {
+        rvError.textContent = msg;
+        rvError.classList.remove('hidden');
+        if (field) field.focus();
+      }
+      function clearRvError() { rvError.classList.add('hidden'); rvError.textContent = ''; }
+
+      function resetReviewForm() {
+        reviewForm.reset();
+        rating = 0;
+        paintStars(0);
+        updateCounter();
+        clearRvError();
+        rvSubmit.disabled = false;
+        rvSubmitLabel.textContent = 'Prześlij opinię';
+        reviewSuccess.classList.add('hidden');
+        reviewForm.classList.remove('hidden');
+      }
+
+      setupDialog(reviewModal, 'data-review-open', 'data-review-close', () => {
+        // po poprzednim wysłaniu wracamy do czystego formularza
+        if (!reviewSuccess.classList.contains('hidden')) resetReviewForm();
+        rvName.focus();
+      });
+
+      reviewForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearRvError();
+
+        const name = rvName.value.trim();
+        const text = rvText.value.trim();
+
+        if (name.length < 2 || name.length > 40) return showRvError('Imię powinno mieć od 2 do 40 znaków.', rvName);
+        if (!rating) return showRvError('Wybierz ocenę od 1 do 5 gwiazdek.', starLabels[0].querySelector('input'));
+        if (text.length < 10) return showRvError('Opinia powinna mieć co najmniej 10 znaków.', rvText);
+        if (text.length > MAX_REVIEW) return showRvError('Opinia może mieć maksymalnie ' + MAX_REVIEW + ' znaków.', rvText);
+
+        // Pole-pułapka: jeśli wypełnione, udajemy sukces i nic nie wysyłamy
+        if (reviewForm.website.value) return showReviewSuccess();
+
+        const payload = {
+          akcja: 'opinia',
+          imie: name,
+          ocena: rating,
+          opinia: text,
+          wyslano: new Date().toISOString(),
+          strona: location.href
+        };
+
+        rvSubmit.disabled = true;
+        rvSubmitLabel.textContent = 'Wysyłam…';
+
+        try {
+          if (GOOGLE_SCRIPT_URL === 'URL_DO_PODMIANY') {
+            console.warn('GOOGLE_SCRIPT_URL nie jest ustawiony. Tryb demo: opinia NIE została nigdzie wysłana.', payload);
+            await new Promise(r => setTimeout(r, 700));
+          } else {
+            await fetch(GOOGLE_SCRIPT_URL, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify(payload)
+            });
+          }
+          showReviewSuccess();
+        } catch (err) {
+          console.error(err);
+          showRvError('Nie udało się wysłać opinii. Sprawdź połączenie i spróbuj ponownie.');
+          rvSubmit.disabled = false;
+          rvSubmitLabel.textContent = 'Prześlij opinię';
+        }
+      });
+
+      function showReviewSuccess() {
+        reviewForm.classList.add('hidden');
+        reviewSuccess.classList.remove('hidden');
+        reviewSuccess.focus({ preventScroll: true });
+      }
+
+      /* ---------- Opinie uczniów: baza, losowanie (Fisher-Yates), marquee ---------- */
+      /* UWAGA: poniższe opinie są FIKCYJNYM materiałem poglądowym.
+         Przed publikacją strony zastąp je prawdziwymi opiniami swoich uczniów (za ich zgodą). */
+      const REVIEWS = [
+        { name: 'Marta K.', rating: 5,
+          text: 'Nigdy wcześniej nie trzymałam gitary w rękach. Po trzech tygodniach zagrałam pierwszą całą piosenkę, a Wera ani razu nie dała mi odczuć, że pytam o coś oczywistego.' },
+        { name: 'Tomek W.', rating: 5,
+          text: 'Utknąłem na solówkach i nic mi nie wychodziło. Dzięki rozpisanym ćwiczeniom i spokojnemu tłumaczeniu wreszcie czuję rytm i gram z kumplami w garażu.' },
+        { name: 'Kasia, mama Julii', rating: 5,
+          text: 'Córka czeka na te zajęcia cały tydzień. Wera potrafi zainteresować nastolatkę i dobiera utwory, które Julia naprawdę lubi, a nie tylko etiudy z podręcznika.' },
+        { name: 'Piotr M.', rating: 5,
+          text: 'Wróciłem do gitary po dwudziestu latach przerwy. Wera uporządkowała moje złe nawyki i ułożyła plan na kilkanaście minut dziennie, bo więcej czasu po prostu nie mam.' },
+        { name: 'Ola S.', rating: 5,
+          text: 'Pracuję na zmiany, a termin lekcji zawsze udawało się przesunąć bez stresu. Takiej elastyczności nie spotkałam u żadnego wcześniejszego nauczyciela.' },
+        { name: 'Michał D.', rating: 5,
+          text: 'Po miesiącu grałem już riffy swoich ulubionych zespołów. Technikę łapałem przy okazji, bez nudnych ćwiczeń w próżni. Efekty przyszły naprawdę szybko.' },
+        { name: 'Ewa L.', rating: 5,
+          text: 'Mam sztywne palce i mnóstwo kompleksów. Wera jest niesamowicie cierpliwa: pokazuje, powtarza, żartuje i nigdy nie popędza. Wreszcie lubię ćwiczyć.' },
+        { name: 'Bartek J.', rating: 5,
+          text: 'Uczę się do matury i lekcje gitary są dla mnie odskocznią. Co tydzień dostaję konkretne, niewielkie zadania i faktycznie je robię, bo wiem, po co.' },
+        { name: 'Agnieszka N.', rating: 5,
+          text: 'Trochę uczyłam się sama z internetu, ale technika kulała. Po kilku miesiącach z Werą palce same wiedzą, gdzie iść, a tremolo wreszcie brzmi czysto.' },
+        { name: 'Krzysztof B.', rating: 5,
+          text: 'Dojazd instruktorki do domu to dla mnie ogromna wygoda. Wera jest punktualna, zawsze przygotowana i od pierwszej lekcji wiem, nad czym pracujemy i po co.' }
+      ];
+
+      // Fisher-Yates: nowa, losowa kolejność przy każdym załadowaniu strony
+      function shuffle(arr) {
+        const a = arr.slice();
+        for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+      }
+
+      const STAR_SVG = '<svg class="ic star" style="width:1.05rem;height:1.05rem" aria-hidden="true"><use href="#i-star"/></svg>';
+
+      function buildReviewCard(r) {
+        const card = document.createElement('figure');
+        card.className = 'review-card flex flex-col rounded-3xl bg-sand p-6 text-coconut shadow-lg shadow-black/25';
+
+        const stars = document.createElement('div');
+        stars.className = 'flex gap-0.5';
+        stars.setAttribute('role', 'img');
+        stars.setAttribute('aria-label', 'Ocena: ' + r.rating + ' na 5');
+        stars.innerHTML = STAR_SVG.repeat(r.rating);
+
+        const quote = document.createElement('blockquote');
+        quote.className = 'mt-4 flex-1 text-base leading-relaxed';
+        quote.textContent = '„' + r.text + '”';
+
+        const cap = document.createElement('figcaption');
+        cap.className = 'mt-5 border-t border-coconut/15 pt-4';
+        const nameEl = document.createElement('span');
+        nameEl.className = 'block font-bold';
+        nameEl.textContent = r.name;
+        cap.append(nameEl);
+
+        card.append(stars, quote, cap);
+        return card;
+      }
+
+      (function initReviews() {
+        const groupA = document.getElementById('reviews-group-a');
+        const groupB = document.getElementById('reviews-group-b');
+        const track = document.getElementById('reviews-track');
+        const marquee = document.getElementById('reviews-marquee');
+        if (!groupA || !groupB || !track) return;
+
+        // średnia ocen liczona z tablicy
+        const avg = REVIEWS.reduce((sum, r) => sum + r.rating, 0) / REVIEWS.length;
+        document.getElementById('rating-avg').textContent = avg.toFixed(1);
+        const total = REVIEWS.length;
+        document.getElementById('rating-caption').textContent = total === 1
+          ? 'Średnia z 1 nadesłanej opinii ucznia'
+          : 'Średnia z ' + total + ' nadesłanych opinii uczniów';
+
+        // losowa kolejność + dwie identyczne kopie dla płynnej pętli (-50%)
+        const order = shuffle(REVIEWS);
+        order.forEach(r => groupA.appendChild(buildReviewCard(r)));
+        order.forEach(r => groupB.appendChild(buildReviewCard(r)));
+
+        // Ruch paska: transform sterowany przez requestAnimationFrame (bez animacji CSS).
+        // Stałe tempo bazowe; hover / dotyk płynnie je zmniejsza ok. 5x, a zjechanie przywraca.
+        const BASE_SPEED = 45;   // px na sekundę
+        const SLOW_RATE = 0.2;   // 5x wolniej
+        const EASE_MS = 500;     // czas pełnej zmiany tempa (hamowanie / rozpędzanie)
+
+        // przy ograniczeniu ruchu w systemie pasek się nie przesuwa (CSS pozwala go przewijać ręcznie)
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        let loopWidth = 0, offset = 0, rate = 1;
+        let pointer = null, touching = false, resumeTimer;
+        let running = false, visible = true, lastT = 0;
+
+        function measure() { loopWidth = groupA.getBoundingClientRect().width; }
+        measure();
+        window.addEventListener('load', measure);
+        window.addEventListener('resize', measure);
+
+        // Pozycja myszy śledzona globalnie i sprawdzana w każdej klatce względem paska.
+        // Dzięki temu tempo jest poprawne także podczas scrollowania strony kółkiem,
+        // gdy kursor stoi, a pasek wjeżdża pod niego lub spod niego wyjeżdża.
+        window.addEventListener('pointermove', e => {
+          pointer = e.pointerType === 'touch' ? null : { x: e.clientX, y: e.clientY };
+        }, { passive: true });
+        document.addEventListener('mouseout', e => { if (!e.relatedTarget) pointer = null; });
+
+        function isHovered() {
+          if (!pointer) return false;
+          const r = marquee.getBoundingClientRect();
+          return pointer.x >= r.left && pointer.x <= r.right && pointer.y >= r.top && pointer.y <= r.bottom;
+        }
+
+        function tick(t) {
+          if (!visible) { running = false; lastT = 0; return; }   // poza ekranem: bez pracy
+          const dt = lastT ? Math.min(t - lastT, 50) : 16;
+          lastT = t;
+
+          const target = (touching || isHovered()) ? SLOW_RATE : 1;
+          rate += (target - rate) * (1 - Math.exp(-dt / (EASE_MS / 3)));
+
+          offset += BASE_SPEED * rate * dt / 1000;
+          if (loopWidth > 0 && offset >= loopWidth) offset -= loopWidth;
+          track.style.transform = 'translate3d(' + (-offset).toFixed(2) + 'px,0,0)';
+
+          requestAnimationFrame(tick);
+        }
+        function start() {
+          if (running) return;
+          running = true; lastT = 0;
+          requestAnimationFrame(tick);
+        }
+
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(entries => {
+            visible = entries[0].isIntersecting;
+            if (visible) start();
+          }, { rootMargin: '120px' }).observe(marquee);
+        }
+        start();
+
+        // dotyk: zwolnienie na czas dotyku + chwila po jego zakończeniu
+        marquee.addEventListener('touchstart', () => { clearTimeout(resumeTimer); touching = true; }, { passive: true });
+        ['touchend', 'touchcancel'].forEach(ev =>
+          marquee.addEventListener(ev, () => {
+            clearTimeout(resumeTimer);
+            resumeTimer = setTimeout(() => { touching = false; }, 2500);
+          }, { passive: true })
+        );
+      })();
+
+      /* ---------- Pole "Dzień": poniedziałek–piątek bez dnia dzisiejszego ---------- */
+      const DAY_NAMES = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'];
+      const daySelect = document.getElementById('dzien');
+
+      function buildDayOptions() {
+        const today = new Date().getDay(); // 0 = niedziela ... 6 = sobota
+        const previous = daySelect.value;
+
+        // zostaw tylko pierwszą opcję (placeholder)
+        while (daySelect.options.length > 1) daySelect.remove(1);
+
+        for (let d = 1; d <= 5; d++) {          // pon–pt
+          if (d === today) continue;            // pomiń dzień dzisiejszy
+          daySelect.add(new Option(DAY_NAMES[d], DAY_NAMES[d]));
+        }
+
+        // przywróć wcześniejszy wybór, jeśli nadal jest dostępny
+        const stillThere = Array.from(daySelect.options).some(o => o.value === previous && o.value);
+        daySelect.value = stillThere ? previous : '';
+      }
+      buildDayOptions();
+      // odśwież listę, jeśli strona była otwarta przez północ
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) buildDayOptions(); });
+
+      /* ---------- Formularz oddzwonienia ---------- */
+      const form = document.getElementById('callback-form');
+      const errorBox = document.getElementById('form-error');
+      const submitBtn = document.getElementById('submit-btn');
+      const submitLabel = document.getElementById('submit-label');
+      const successBox = document.getElementById('form-success');
+
+      function showError(msg, field) {
+        errorBox.textContent = msg;
+        errorBox.classList.remove('hidden');
+        if (field) field.focus();
+      }
+      function clearError() { errorBox.classList.add('hidden'); errorBox.textContent = ''; }
+
+      /* ---------- Walidacja numeru telefonu (natychmiast po opuszczeniu pola) ---------- */
+      const phoneInput = form.telefon;
+      const phoneError = document.getElementById('telefon-error');
+      const PHONE_RE = /^(\+?48)?[1-9]\d{8}$/;
+
+      function validatePhone(requireValue) {
+        const raw = phoneInput.value.trim();
+        let msg = '';
+        if (!raw) {
+          if (requireValue) msg = 'Podaj numer telefonu: 9 cyfr, np. 500 123 456.';
+        } else if (!PHONE_RE.test(raw.replace(/[\s\-().]/g, ''))) {
+          msg = 'Numer telefonu musi składać się z 9 cyfr, np. 500 123 456.';
+        }
+        phoneError.textContent = msg;
+        phoneError.classList.toggle('hidden', !msg);
+        phoneInput.setAttribute('aria-invalid', msg ? 'true' : 'false');
+        return !msg;
+      }
+      phoneInput.addEventListener('blur', () => validatePhone(false));
+      // gdy błąd jest już widoczny, poprawiamy go na bieżąco podczas pisania
+      phoneInput.addEventListener('input', () => { if (!phoneError.classList.contains('hidden')) validatePhone(false); });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearError();
+
+        const name = form.imie.value.trim();
+        const phoneRaw = form.telefon.value.trim();
+        const day = form.dzien.value;
+        const slot = form.godzina.value;
+
+        if (name.length < 2) return showError('Podaj swoje imię (minimum 2 znaki).', form.imie);
+        if (!validatePhone(true)) return phoneInput.focus();
+        if (!day) return showError('Wybierz dzień, w którym mam do Ciebie zadzwonić.', form.dzien);
+        if (!slot) return showError('Wybierz przedział godzin.', form.godzina);
+
+        // Pole-pułapka: jeśli wypełnione, udajemy sukces i nic nie wysyłamy
+        if (form.website.value) { return showSuccess(name, day, slot); }
+
+        const payload = {
+          akcja: 'oddzwonienie',
+          imie: name,
+          telefon: phoneRaw,
+          dzien: day,
+          godzina: slot,
+          wyslano: new Date().toISOString(),
+          strona: location.href
+        };
+
+        submitBtn.disabled = true;
+        submitLabel.textContent = 'Wysyłam…';
+
+        try {
+          if (GOOGLE_SCRIPT_URL === 'URL_DO_PODMIANY') {
+            console.warn('GOOGLE_SCRIPT_URL nie jest ustawiony. Tryb demo: dane NIE zostały nigdzie wysłane.', payload);
+            await new Promise(r => setTimeout(r, 700));
+          } else {
+            // Content-Type text/plain + no-cors omija preflight CORS w Google Apps Script
+            await fetch(GOOGLE_SCRIPT_URL, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify(payload)
+            });
+          }
+          showSuccess(name, day, slot);
+        } catch (err) {
+          console.error(err);
+          showError('Nie udało się wysłać formularza. Sprawdź połączenie i spróbuj ponownie albo zadzwoń: 500 123 456.');
+          submitBtn.disabled = false;
+          submitLabel.textContent = 'Oddzwoń do mnie';
+        }
+      });
+
+      function showSuccess(name, day, slot) {
+        document.getElementById('success-name').textContent = name;
+        document.getElementById('success-day').textContent = day;
+        document.getElementById('success-time').textContent = slot.replace('-', '–');
+        form.classList.add('hidden');
+        successBox.classList.remove('hidden');
+        successBox.focus({ preventScroll: true });
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    })();
+  </script>
+
+  <!--
+  ============================================================
+  GOOGLE APPS SCRIPT (wklej w script.google.com, powiązany z arkuszem Google)
+  Wdróż jako: Aplikacja internetowa → Wykonaj jako: Ja → Dostęp: Wszyscy.
+  Skopiuj adres URL wdrożenia do stałej GOOGLE_SCRIPT_URL powyżej.
+  Ustaw adres NOTIFY_EMAIL w kodzie poniżej. Przy pierwszym wdrożeniu Google poprosi o zgodę
+  na wysyłanie e-maili (MailApp). Po KAŻDEJ zmianie kodu: Wdróż → Zarządzaj wdrożeniami → Nowa wersja.
+  Limit MailApp to ok. 100 wiadomości dziennie na koncie prywatnym, więc dla tej strony w zupełności wystarczy.
+
+  // Adres, na który przychodzą powiadomienia o nowych zgłoszeniach i opiniach
+  const NOTIFY_EMAIL = 'gitarazwera@gmail.com';
+
+  // Zabezpieczenie arkusza przed wstrzyknięciem formuł (tekst zaczynający się od = + - @)
+  const safe = v => /^[=+\-@]/.test(String(v)) ? "'" + v : v;
+  // Czyszczenie i przycinanie danych (walidacja także po stronie serwera)
+  const clean = (v, max) => String(v == null ? '' : v).replace(/[\r\n]+/g, ' ').trim().slice(0, max);
+
+  function doPost(e) {
+    const d = JSON.parse(e.postData.contents);
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    const name = clean(d.imie, 40);
+    let subject, body;
+
+    if (d.akcja === 'opinia') {
+      // opinie trafiają do osobnej karty ze statusem do ręcznego zatwierdzenia
+      const rating = Math.min(5, Math.max(1, Number(d.ocena) || 1));
+      const text = clean(d.opinia, 300);
+      const sh = ss.getSheetByName('Opinie') || ss.insertSheet('Opinie');
+      sh.appendRow([new Date(), safe(name), rating, safe(text), 'do zatwierdzenia']);
+
+      subject = 'Nowa opinia na stronie: ' + rating + '/5 od ' + name;
+      body = 'Nowa opinia czeka na zatwierdzenie.\n\n'
+           + 'Imię: ' + name + '\n'
+           + 'Ocena: ' + rating + '/5\n'
+           + 'Opinia: ' + text + '\n\n'
+           + 'Arkusz: ' + ss.getUrl();
+    } else {
+      const phone = clean(d.telefon, 20);
+      const sh = ss.getSheetByName('Zgloszenia') || ss.insertSheet('Zgloszenia');
+      sh.appendRow([new Date(), safe(name), "'" + phone, clean(d.dzien, 20), clean(d.godzina, 20)]);
+
+      subject = 'Nowe zgłoszenie: oddzwoń do ' + name;
+      body = 'Nowa prośba o oddzwonienie.\n\n'
+           + 'Imię: ' + name + '\n'
+           + 'Telefon: ' + phone + '\n'
+           + 'Dzień: ' + clean(d.dzien, 20) + '\n'
+           + 'Godziny: ' + clean(d.godzina, 20) + '\n\n'
+           + 'Arkusz: ' + ss.getUrl();
+    }
+
+    // Wiersz jest już zapisany w arkuszu; ewentualny błąd e-maila go nie cofa
+    try {
+      MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
+    } catch (err) {
+      console.error('Nie udało się wysłać powiadomienia e-mail: ' + err);
+    }
+    return ContentService.createTextOutput('ok');
+  }
+
+  Do podmiany w pliku: numer 500 123 456 / +48500123456 (domena https://gitarazwera.pl/ jest już ustawiona)
+  Zdjęcia (folder img/ obok index.html): hero.jpg, o-mnie.jpg, galeria-1.jpg ... galeria-4.jpg
+  (og:image wymaga pełnego adresu URL, np. https://gitarazwera.pl/img/hero.jpg)
+  ============================================================
+  -->
+</body>
+</html>
